@@ -1,15 +1,13 @@
-import Cards from './components/Cards'
-import Header from './components/Header'
-import Slider from './components/Slider'
+import Home from "./pages/Home";
+
+
 
 function App() {
   return (
     <div className="font-recursive">
-    <Header/>
-    <Slider/>
-    <Cards/>
+      <Home/>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
