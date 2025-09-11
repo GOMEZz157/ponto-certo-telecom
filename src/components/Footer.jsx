@@ -21,7 +21,7 @@ const Footer = () => {
         <img src={logo} alt="Logo da ponto certo" />
       </div>
       <div className="bg-yellow flex justify-around items-center p-4 text-dark-blue flex-wrap gap-6">
-        <p>© 2021-2025 | Ponto Certo Internet. Todos os direitos reservados.</p>
+        <p className="font-poppins">© 2021-2025 | Ponto Certo Internet. Todos os direitos reservados.</p>
         <p className="flex items-center gap-2">
           Desenvolvido por <img src={rocket} alt="icone da rocketride dev" />
         </p>
