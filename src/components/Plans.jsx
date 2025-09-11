@@ -104,7 +104,7 @@ const Plans = () => {
 
             {/* Logos */}
             {plan.logos && (
-              <div className="flex gap-3 mb-6">
+              <div className={`flex gap-3 mb-6 ${plan.best ? "bg-white p-4 rounded-xl" : ""}`}>
                 {plan.logos.map((logo, i) => (
                   <img key={i} src={logo} alt="benefício" className="h-6" />
                 ))}
