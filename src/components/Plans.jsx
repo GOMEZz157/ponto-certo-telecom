@@ -64,7 +64,7 @@ const Plans = () => {
 
   return (
     <section className="flex flex-col items-center justify-center mt-32">
-      <BlueButton text="Planos de internet" variant="primary" className="mb-30"/>
+      <BlueButton text="Planos de internet" variant="nohover" className="mb-30"/>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {plans.map((plan, index) => (
           <div

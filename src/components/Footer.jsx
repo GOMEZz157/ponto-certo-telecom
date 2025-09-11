@@ -1,23 +1,10 @@
-import { useState, useEffect } from "react";
-import logovertical from "../assets/logo-vertical.png";
-import logohorizontal from "../assets/logo-horizontal.png";
+
+import logo from "../assets/logo-horizontal.png";
 import BlueButton from "./BlueButton";
 import rocket from "../assets/rocket.png";
 
 const Footer = () => {
-  const [logo, setLogo] = useState(
-    window.innerWidth > 640 ? logovertical : logohorizontal
-  );
 
-  useEffect(() => {
-    const handleResize = () => {
-      setLogo(window.innerWidth > 640 ? logohorizontal : logovertical);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <footer>
