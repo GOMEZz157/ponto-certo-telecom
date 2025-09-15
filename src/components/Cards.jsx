@@ -30,10 +30,17 @@ const Cards = () => {
     {
       title: "Qualidade de internet",
       description:
-        "Chega de ficar na mão com uma internet e atendimento demorado, com a pontocerto você tem qualidade do começo ao fim.",
+        "Chega de ficar na mão com uma internet e atendimento demorado, com a PONTOCERTO você tem qualidade do começo ao fim.",
       icon: <FontAwesomeIcon icon={faGlobe} />,
     },
   ];
+
+  const highlightPONTOCERTO = (text) => {
+    return text.replace(
+      /PONTOCERTO/g,
+      '<strong class="text-yellow">PONTOCERTO</strong>'
+    );
+  };
 
   return (
     <section className="flex justify-center">
@@ -47,7 +54,12 @@ const Cards = () => {
             <h3 className="text-2xl font-bold mb-8 text-white uppercase">
               {card.title}
             </h3>
-            <p className="text-white">{card.description}</p>
+            <p 
+              className="text-white"
+              dangerouslySetInnerHTML={{ 
+                __html: highlightPONTOCERTO(card.description) 
+              }}
+            />
           </div>
         ))}
       </div>
