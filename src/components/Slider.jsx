@@ -60,7 +60,7 @@ const Slider = () => {
   };
 
   return (
-    <div 
+    <div
       className="relative w-full max-h-[80vh] overflow-hidden"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
@@ -79,7 +79,9 @@ const Slider = () => {
             <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start px-15 max-w-lg text-white">
               <h1 className="text-4xl font-bold mb-4">{slide.title}</h1>
               <p className="text-xl mb-6">{slide.description}</p>
-              <BlueButton text={slide.buttonText} />
+              <a href="https://wa.link/gkcjyx">
+                <BlueButton text={slide.buttonText} />
+              </a>
             </div>
           </div>
         ))}

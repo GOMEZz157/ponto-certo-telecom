@@ -7,7 +7,7 @@ import { useState } from "react";
 const links = [
   { href: "/", label: "Home" , target: "_self" },
   { href: "/planos", label: "Planos" , target: "_self" },
-  { href: "/contato", label: "Contato" , target: "_self" },
+  { href: "https://wa.link/gkcjyx", label: "Contato" , target: "_blank" },
   { href: "https://pontocerto.dualstack.speedtestcustom.com/", label: "Speed Test", target: "_blank" },
 ];
 

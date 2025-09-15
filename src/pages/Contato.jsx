@@ -10,7 +10,7 @@ const Contato = () => {
     {
       title: "WhatsApp",
       description: "11 94890 5363",
-      link: "https://wa.me/5511948905363",
+      link: "https://wa.link/gkcjyx",
       icon: <FontAwesomeIcon icon={faWhatsapp} />,
     },
     {
