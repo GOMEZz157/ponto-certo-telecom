@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="bg-dark-blue flex justify-around items-center p-8 text-white flex-wrap gap-20 mt-30">
+      <div className="bg-dark-blue flex justify-around items-center p-8 text-white flex-wrap gap-20">
         <div className="font-bold max-w-xs flex flex-col gap-8">
           <h2 className="uppercase text-4xl">
             iNTERNET DE QUALIDADE É COM A PONTO CERTO
@@ -16,7 +16,7 @@ const Footer = () => {
           <p className="text-xl text-yellow">
             QUER TIRAR DÚVIDAS OU SOLICITAR UM PLANO?
           </p>
-          <BlueButton text="FALE com o suporte" variant="primary" />
+          <BlueButton text="FALE com o suporte" variant="third" />
         </div>
         <img src={logo} alt="Logo da ponto certo" />
       </div>

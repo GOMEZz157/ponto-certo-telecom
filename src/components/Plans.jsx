@@ -7,19 +7,6 @@ import paramount from "../assets/paramount.png";
 const Plans = () => {
   const plans = [
     {
-      size: "750MB",
-      price: 129.99,
-      benefits: ["750MB de Velocidade", "Roteador 5G", "Sem Limite de Consumo"],
-      logos: [deezer, paramount, netplaygo],
-    },
-    {
-      size: "850MB",
-      price: 159.99,
-      benefits: ["850MB de Velocidade", "Roteador 5G", "Sem Limite de Consumo"],
-      logos: [max, paramount, netplaygo],
-      best: true,
-    },
-    {
       size: "1GB",
       price: 209.99,
       benefits: [
@@ -29,6 +16,19 @@ const Plans = () => {
         "Sem Limite de Consumo",
       ],
       logos: [deezer, max, paramount, netplaygo],
+    },
+    {
+      size: "850MB",
+      price: 159.99,
+      benefits: ["850MB de Velocidade", "Roteador 5G", "Sem Limite de Consumo"],
+      logos: [max, paramount, netplaygo],
+      best: true,
+    },
+    {
+      size: "750MB",
+      price: 129.99,
+      benefits: ["750MB de Velocidade", "Roteador 5G", "Sem Limite de Consumo"],
+      logos: [deezer, paramount, netplaygo],
     },
     {
       size: "600MB",
@@ -63,8 +63,12 @@ const Plans = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center mt-32">
-      <BlueButton text="Planos de internet" variant="nohover" className="mb-30"/>
+    <section className="flex flex-col items-center justify-center mt-32 mb-30">
+      <BlueButton
+        text="Planos de internet"
+        variant="nohover"
+        className="mb-30"
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {plans.map((plan, index) => (
           <div
@@ -104,7 +108,11 @@ const Plans = () => {
 
             {/* Logos */}
             {plan.logos && (
-              <div className={`flex gap-3 mb-6 ${plan.best ? "bg-white p-4 rounded-xl" : ""}`}>
+              <div
+                className={`flex gap-3 mb-6 ${
+                  plan.best ? "bg-white p-4 rounded-xl" : ""
+                }`}
+              >
                 {plan.logos.map((logo, i) => (
                   <img key={i} src={logo} alt="benefício" className="h-6" />
                 ))}
@@ -114,11 +122,7 @@ const Plans = () => {
             {/* Botão */}
             <BlueButton
               text="Quero esse plano"
-              variant={
-                plan.best
-                  ? "highlight"
-                  : "primary"
-              }
+              variant={plan.best ? "highlight" : "primary"}
             />
           </div>
         ))}

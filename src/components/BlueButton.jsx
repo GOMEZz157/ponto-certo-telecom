@@ -7,6 +7,7 @@ const BlueButton = ({ text, variant = "primary", className = "" }) => {
     secondary: "bg-dark-blue text-white hover:bg-blue",
     highlight: "bg-white text-dark-blue hover:bg-yellow",
     nohover: "bg-blue text-white",
+    third: "bg-white text-dark-blue hover:text-white hover:bg-blue",
   };
 
   return (

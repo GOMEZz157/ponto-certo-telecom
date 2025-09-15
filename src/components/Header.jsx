@@ -17,6 +17,7 @@ function CentralDoClienteButton({ className = "", onClick }) {
     <a
       href="https://pontocertotelecom.com.br/central_assinante_web/login"
       className={`flex items-center gap-3 text-lg font-bold border border-yellow rounded-2xl transition-colors px-6 py-3 ${className}`}
+      target="_blank"
       onClick={onClick}
     >
       <FontAwesomeIcon icon={faCircleUser} />
@@ -76,6 +77,7 @@ function Header() {
                 href={link.href}
                 className="hover:text-yellow"
                 onClick={() => setMenuAberto(false)}
+                target="_blank"
               >
                 {link.label}
               </a>
