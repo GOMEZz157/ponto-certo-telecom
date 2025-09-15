@@ -5,10 +5,10 @@ import { useState } from "react";
 
 // Lista de links comuns (desktop + mobile)
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/planos", label: "Planos" },
-  { href: "/contato", label: "Contato" },
-  { href: "https://pontocerto.dualstack.speedtestcustom.com/", label: "Speed Test" },
+  { href: "/", label: "Home" , target: "_self" },
+  { href: "/planos", label: "Planos" , target: "_self" },
+  { href: "/contato", label: "Contato" , target: "_self" },
+  { href: "https://pontocerto.dualstack.speedtestcustom.com/", label: "Speed Test", target: "_blank" },
 ];
 
 // Botão reutilizável
@@ -51,7 +51,7 @@ function Header() {
         <ul className="gap-8 text-lg hidden lg:flex">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="hover:text-yellow">
+              <a href={link.href} className="hover:text-yellow" target={link.target}>
                 {link.label}
               </a>
             </li>
