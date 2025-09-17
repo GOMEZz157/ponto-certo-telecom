@@ -1,5 +1,6 @@
 // Home.jsx
 import Cards from "../components/Cards";
+import Contato from "./Contato";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Plans from "../components/Plans";
@@ -22,6 +23,7 @@ const Home = () => {
       {/* Espaço abaixo para não subir */}
       <div className="pt-20">
         <Plans />
+        <Contato />
         <Footer />
       </div>
     </section>

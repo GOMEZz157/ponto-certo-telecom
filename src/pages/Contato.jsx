@@ -29,7 +29,6 @@ const Contato = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <Header />
       {/* Section ocupa a tela inteira */}
       <section className="relative flex flex-col items-center justify-center w-screen min-h-screen">
         {/* Imagem de fundo */}
@@ -54,9 +53,7 @@ const Contato = () => {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center justify-center w-full p-6 border rounded-lg shadow-lg bg-white/95 text-blue hover:bg-white/100 hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
-                <div className="text-4xl text-blue mb-2">
-                  {contato.icon}
-                </div>
+                <div className="text-4xl text-blue mb-2">{contato.icon}</div>
                 <h3 className="text-xl font-bold mb-1">{contato.title}</h3>
                 <p className="text-gray-600">{contato.description}</p>
               </a>
@@ -64,8 +61,6 @@ const Contato = () => {
           </div>
         </div>
       </section>
-      {/* Footer fica fora da section */}
-      <Footer />
     </div>
   );
 };
