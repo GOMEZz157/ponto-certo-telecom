@@ -51,7 +51,7 @@ const Contato = () => {
                 href={contato.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center w-full p-6 border rounded-lg shadow-lg bg-white/95 text-blue hover:bg-white/100 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="flex flex-col items-center justify-center w-full p-6 border rounded-lg shadow-lg bg-white/95 text-blue hover:bg-white/100 hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-110"
               >
                 <div className="text-4xl text-blue mb-2">{contato.icon}</div>
                 <h3 className="text-xl font-bold mb-1">{contato.title}</h3>
