@@ -1,4 +1,3 @@
-// Home.jsx
 import Cards from "../components/Cards";
 import Contato from "./Contato";
 import Footer from "../components/Footer";
@@ -10,7 +9,6 @@ const Home = () => {
   return (
     <section className="bg-offwhite relative">
       <Header />
-
       {/* Container do slider e cards */}
       <div className="relative">
         <Slider />
@@ -19,10 +17,12 @@ const Home = () => {
           <Cards />
         </div>
       </div>
-
       {/* Espaço abaixo para não subir */}
       <div className="pt-20">
-        <Plans />
+        {/* Seção de planos com ID para scroll */}
+        <section id="planos">
+          <Plans />
+        </section>
         <Contato />
         <Footer />
       </div>

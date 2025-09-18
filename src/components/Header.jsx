@@ -1,14 +1,26 @@
 import logo from "../assets/logo-horizontal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUser, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleUser,
+  faBars,
+  faTimes,
+  faHome,
+  faRocket,
+  faWifi,
+} from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 
 // Lista de links comuns (desktop + mobile)
 const links = [
-  { href: "/", label: "Home" , target: "_self" },
-  { href: "/planos", label: "Planos" , target: "_self" },
-  { href: "https://wa.link/gkcjyx", label: "Contato" , target: "_blank" },
-  { href: "https://pontocerto.dualstack.speedtestcustom.com/", label: "Speed Test", target: "_blank" },
+  { href: "/", label: "Home", target: "_self", icon: faHome },
+  { href: "https://wa.link/gkcjyx", label: "Contato", target: "_blank", icon: faWhatsapp },
+  {
+    href: "https://pontocerto.dualstack.speedtestcustom.com/",
+    label: "Speed Test",
+    target: "_blank",
+    icon: faRocket
+  },
 ];
 
 // Botão reutilizável
@@ -28,7 +40,20 @@ function CentralDoClienteButton({ className = "", onClick }) {
 
 function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
-
+  
+  // Função para scroll suave até a seção de planos
+  const scrollToPlans = (e) => {
+    e.preventDefault();
+    const planosElement = document.getElementById('planos');
+    if (planosElement) {
+      planosElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setMenuAberto(false); // Fecha o menu mobile se estiver aberto
+  };
+  
   return (
     <header className="bg-dark-blue w-screen">
       <nav className="flex justify-between items-center px-8 py-4 text-white">
@@ -36,7 +61,7 @@ function Header() {
         <a href="/" className="cursor-pointer">
           <img src={logo} className="max-h-13" alt="Logo da ponto certo" />
         </a>
-
+        
         {/* Botão Hamburguer (mobile) */}
         <button
           className="text-2xl hover:text-yellow focus:outline-none lg:hidden"
@@ -46,24 +71,41 @@ function Header() {
         >
           <FontAwesomeIcon icon={menuAberto ? faTimes : faBars} />
         </button>
-
+        
         {/* Menu desktop */}
-        <ul className="gap-8 text-lg hidden lg:flex">
+        <ul className="gap-8 text-lg hidden lg:flex items-center">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="hover:text-yellow" target={link.target}>
+              <a
+                href={link.href}
+                className="hover:text-yellow"
+                target={link.target}
+              >
+                {link.icon && (
+                  <FontAwesomeIcon icon={link.icon} className="mr-1" />
+                )}
                 {link.label}
               </a>
             </li>
           ))}
+          {/* Link Planos separado para controle do scroll */}
+          <li>
+            <button
+              onClick={scrollToPlans}
+              className="hover:text-yellow cursor-pointer bg-transparent border-none text-lg text-white"
+            >
+              <FontAwesomeIcon icon={faWifi} className="mr-1" />
+              Planos
+            </button>
+          </li>
         </ul>
-
+        
         {/* Botão Central do Cliente (desktop) */}
         <div className="hidden lg:flex">
           <CentralDoClienteButton className="bg-dark-blue text-white hover:bg-yellow hover:text-dark-blue" />
         </div>
       </nav>
-
+      
       {/* Dropdown mobile */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
@@ -77,12 +119,21 @@ function Header() {
                 href={link.href}
                 className="hover:text-yellow"
                 onClick={() => setMenuAberto(false)}
-                target="_blank"
+                target={link.target}
               >
                 {link.label}
               </a>
             </li>
           ))}
+          {/* Link Planos separado para mobile */}
+          <li>
+            <button
+              onClick={scrollToPlans}
+              className="hover:text-yellow cursor-pointer bg-transparent border-none text-lg text-white"
+            >
+              Planos
+            </button>
+          </li>
           <li className="w-full">
             <CentralDoClienteButton
               className="w-full justify-center bg-dark-blue text-white hover:bg-yellow hover:text-dark-blue mt-2"

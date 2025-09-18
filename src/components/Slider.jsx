@@ -93,71 +93,64 @@ const Slider = () => {
 
   const renderSlideContent = (slide) => {
     if (slide.type === "glass-hero") {
-      return (
-        <div className="w-full h-full relative overflow-hidden">
-          {/* Background com gradiente suave */}
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600">
-            {/* Formas geométricas de fundo */}
-            <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-400/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
-            
-            {/* Grade sutil */}
-            <div className="absolute inset-0 opacity-10" 
-                 style={{
-                   backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-                   backgroundSize: '50px 50px'
-                 }}>
-            </div>
-          </div>
+  return (
+    <div className="w-full h-full relative overflow-hidden">
+      {/* Background com gradiente suave */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600">
+        {/* Formas geométricas de fundo (esconde no mobile) */}
+        <div className="hidden sm:block absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="hidden sm:block absolute bottom-20 right-20 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="hidden sm:block absolute top-1/2 left-1/2 w-64 h-64 bg-pink-400/15 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Grade sutil (pode ficar no mobile também) */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+          }}
+        ></div>
+      </div>
 
-          {/* Elementos flutuantes glassmorphism */}
-          <div className="absolute top-32 right-32 w-32 h-32 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 flex items-center justify-center animate-float">
-            <svg className="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
-            </svg>
-          </div>
+      {/* Elementos flutuantes glassmorphism (só desktop/tablet) */}
+      <div className="hidden sm:flex absolute top-32 right-32 w-32 h-32 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 items-center justify-center animate-float">
+        <svg className="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+        </svg>
+      </div>
 
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center animate-float" style={{animationDelay: '1s'}}>
-            <svg className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
+      <div className="hidden sm:flex absolute bottom-40 left-20 w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 items-center justify-center animate-float" style={{ animationDelay: '1s' }}>
+        <svg className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
 
-          <div className="absolute top-1/2 right-16 w-20 h-20 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 flex items-center justify-center animate-float" style={{animationDelay: '2.5s'}}>
-            <svg className="w-10 h-10 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-            </svg>
-          </div>
+      <div className="hidden sm:flex absolute top-1/2 right-16 w-20 h-20 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 items-center justify-center animate-float" style={{ animationDelay: '2.5s' }}>
+        <svg className="w-10 h-10 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+      </div>
 
-          {/* Partículas flutuantes pequenas */}
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-white/30 rounded-full animate-ping"
-              style={{
-                left: `${20 + Math.random() * 60}%`,
-                top: `${20 + Math.random() * 60}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
-              }}
-            />
-          ))}
-        </div>
-      );
-    } else if (slide.type === "video") {
-      return (
-        <video
-          src={slide.videoSrc}
-          autoPlay
-          loop
-          muted
-          className="w-full h-full object-cover"
-        >
-          <source src={slide.videoSrc} type="video/mp4" />
-        </video>
-      );
-    } else {
+      {/* Partículas flutuantes pequenas (desktop/tablet only) */}
+      <div className="hidden sm:block">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-white/30 rounded-full animate-ping"
+            style={{
+              left: `${20 + Math.random() * 60}%`,
+              top: `${20 + Math.random() * 60}%`,
+              animationDelay: `${Math.random() * 4}s`,
+              animationDuration: `${3 + Math.random() * 2}s`,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+ else {
       return (
         <img
           src={slide.image}
