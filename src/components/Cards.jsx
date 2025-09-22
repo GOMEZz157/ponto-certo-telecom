@@ -100,7 +100,7 @@ const Cards = () => {
             data-index={index}
             className={`
               bg-dark-blue rounded-lg shadow-md p-6 w-[250px]
-              transition-all duration-700 ease-out
+              transition-all duration-300 ease-out hover:scale-110
               ${getAnimationClass(index)}
             `}
             style={{
