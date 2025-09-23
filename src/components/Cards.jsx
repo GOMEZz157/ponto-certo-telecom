@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTv,
@@ -100,7 +100,7 @@ const Cards = () => {
             data-index={index}
             className={`
               bg-dark-blue rounded-lg shadow-md p-6 w-[250px]
-              transition-all duration-300 ease-in hover:-translate-y-3
+              transition-all duration-100 ease-in hover:-translate-y-3
               ${getAnimationClass(index)}
             `}
             style={{

@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Plans from "../components/Plans";
 import Slider from "../components/Slider";
+import Benefícios from "../components/Benefícios";
+
 
 const Home = () => {
   return (
@@ -22,6 +24,9 @@ const Home = () => {
         {/* Seção de planos com ID para scroll */}
         <section id="planos">
           <Plans />
+        </section>
+        <section id="beneficios">
+          <Benefícios />
         </section>
         <Contato />
         <Footer />

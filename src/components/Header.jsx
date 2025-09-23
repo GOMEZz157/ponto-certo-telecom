@@ -14,12 +14,17 @@ import { useState } from "react";
 // Lista de links comuns (desktop + mobile)
 const links = [
   { href: "/", label: "Home", target: "_self", icon: faHome },
-  { href: "https://wa.link/gkcjyx", label: "Contato", target: "_blank", icon: faWhatsapp },
+  {
+    href: "https://wa.link/gkcjyx",
+    label: "Contato",
+    target: "_blank",
+    icon: faWhatsapp,
+  },
   {
     href: "https://pontocerto.dualstack.speedtestcustom.com/",
     label: "Speed Test",
     target: "_blank",
-    icon: faRocket
+    icon: faRocket,
   },
 ];
 
@@ -40,20 +45,20 @@ function CentralDoClienteButton({ className = "", onClick }) {
 
 function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
-  
+
   // Função para scroll suave até a seção de planos
   const scrollToPlans = (e) => {
     e.preventDefault();
-    const planosElement = document.getElementById('planos');
+    const planosElement = document.getElementById("planos");
     if (planosElement) {
       planosElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     }
     setMenuAberto(false); // Fecha o menu mobile se estiver aberto
   };
-  
+
   return (
     <header className="bg-dark-blue w-screen">
       <nav className="flex justify-between items-center px-8 py-4 text-white">
@@ -61,7 +66,7 @@ function Header() {
         <a href="/" className="cursor-pointer">
           <img src={logo} className="max-h-13" alt="Logo da ponto certo" />
         </a>
-        
+
         {/* Botão Hamburguer (mobile) */}
         <button
           className="text-2xl hover:text-yellow focus:outline-none lg:hidden"
@@ -71,7 +76,7 @@ function Header() {
         >
           <FontAwesomeIcon icon={menuAberto ? faTimes : faBars} />
         </button>
-        
+
         {/* Menu desktop */}
         <ul className="gap-8 text-lg hidden lg:flex items-center">
           {links.map((link) => (
@@ -99,13 +104,13 @@ function Header() {
             </button>
           </li>
         </ul>
-        
+
         {/* Botão Central do Cliente (desktop) */}
         <div className="hidden lg:flex">
           <CentralDoClienteButton className="bg-dark-blue text-white hover:bg-yellow hover:text-dark-blue" />
         </div>
       </nav>
-      
+
       {/* Dropdown mobile */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${

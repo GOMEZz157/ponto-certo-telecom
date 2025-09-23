@@ -5,6 +5,7 @@ import videogame from "../assets/videogames.png";
 import movies from "../assets/movies.png";
 import homeoffice from "../assets/home-office.jpg";
 import business from "../assets/business.jpg";
+import tv from "../assets/tv.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -27,13 +28,14 @@ if (typeof document !== "undefined") {
 }
 
 const slides = [
-
   {
     type: "image",
     image: cellphone,
     title: "Conecte-se a qualquer hora",
     description: "Com nossa internet você nunca perde uma mensagem importante.",
     buttonText: "Saiba Mais",
+    link: "https://wa.link/gkcjyx",
+    isExternal: true,
   },
   {
     type: "image",
@@ -41,6 +43,8 @@ const slides = [
     title: "Jogos sem lag",
     description: "Experimente a melhor conexão para seus games favoritos.",
     buttonText: "Experimente Agora",
+    link: "https://wa.link/gkcjyx",
+    isExternal: true,
   },
   {
     type: "image",
@@ -48,6 +52,8 @@ const slides = [
     title: "Streaming sem travar",
     description: "Maratone suas séries e filmes sem interrupções.",
     buttonText: "Assista Agora",
+    link: "https://wa.link/gkcjyx",
+    isExternal: true,
   },
   {
     type: "image",
@@ -55,6 +61,8 @@ const slides = [
     title: "Internet para empresas",
     description: "Soluções de internet rápidas e confiáveis para o seu negócio.",
     buttonText: "Conheça Nossas Soluções",
+    link: "https://wa.link/gkcjyx",
+    isExternal: true,
   },
   {
     type: "image",
@@ -62,6 +70,17 @@ const slides = [
     title: "Trabalhe de casa",
     description: "Conexão estável para suas reuniões e tarefas diárias.",
     buttonText: "Saiba Mais",
+    link: "https://wa.link/gkcjyx",
+    isExternal: true,
+  },
+  {
+    type: "image",
+    image: tv,
+    title: "Entretenimento sem limites",
+    description: "Aproveite a melhor conexão para sua TV e dispositivos.",
+    buttonText: "Conheça Mais da NetPlaygo",
+    link: "beneficios",
+    isExternal: false,
   },
 ];
 
@@ -84,7 +103,7 @@ const Slider = () => {
 
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 3000); // Muda de slide a cada 4 segundos
+    }, 3000); // Muda de slide a cada 3 segundos
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]); // Removido 'current' da dependência
@@ -105,6 +124,26 @@ const Slider = () => {
     );
   };
 
+  // Função para scroll suave até a seção especificada
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  // Função para lidar com cliques nos botões
+  const handleButtonClick = (slide) => {
+    if (slide.isExternal) {
+      window.open(slide.link, '_blank');
+    } else {
+      scrollToSection(slide.link);
+    }
+  };
+
   return (
     <div
       className="relative w-full max-h-[80vh] overflow-hidden"
@@ -122,24 +161,6 @@ const Slider = () => {
             <div className="absolute inset-0 flex flex-col justify-center items-start px-8 lg:px-16">
               {/* Card principal glassmorphism */}
               <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 lg:p-12 max-w-2xl shadow-2xl">
-                {/* Stats cards */}
-                {slide.stats && (
-                  <div className="flex space-x-4 mb-8">
-                    {slide.stats.map((stat, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 px-4 py-3 text-center min-w-[80px]"
-                      >
-                        <div className="text-white font-bold text-lg">
-                          {stat.value}
-                        </div>
-                        <div className="text-white/70 text-sm">
-                          {stat.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
 
                 {/* Título com efeito glass */}
                 <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white leading-tight">
@@ -153,9 +174,12 @@ const Slider = () => {
 
                 {/* Container do botão com glassmorphism */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-4 inline-block">
-                  <a href="https://wa.link/gkcjyx">
+                  <button 
+                    onClick={() => handleButtonClick(slide)}
+                    className="w-full"
+                  >
                     <BlueButton text={slide.buttonText} />
-                  </a>
+                  </button>
                 </div>
               </div>
 
