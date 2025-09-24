@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import BlueButton from "./BlueButton";
-import cellphone from "../assets/cellphone.png";
-import videogame from "../assets/videogames.png";
-import movies from "../assets/movies.png";
-import homeoffice from "../assets/home-office.jpg";
-import business from "../assets/business.jpg";
-import tv from "../assets/tv.jpg";
+import cellphone from "../assets/cellphone.webp";
+import videogame from "../assets/videogames.webp";
+import movies from "../assets/movies.webp";
+import homeoffice from "../assets/homeoffice.webp";
+import business from "../assets/business.webp";
+import tv from "../assets/tv.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 

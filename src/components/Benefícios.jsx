@@ -7,6 +7,17 @@ import paramount from "../assets/paramount.png";
 const Benefícios = () => {
   const beneficios = [
     {
+      icon: netplaygo,
+      title: "NetPlaygoTV",
+      description:
+        "Streaming de canais ao vivo, filmes e séries na palma da sua mão! Tenha acesso a uma programação completa com esportes, notícias, entretenimento e muito mais para curtir em qualquer lugar.",
+      playstore:
+        "https://play.google.com/store/apps/details?id=netplaygo.com.br",
+      appstore: "https://apps.apple.com/br/app/netplay-go/id6450018239",
+      gradient: "from-green-600 to-emerald-600",
+      bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
+    },
+    {
       icon: max,
       title: "Max",
       description:
@@ -39,17 +50,6 @@ const Benefícios = () => {
       appstore: "https://apps.apple.com/br/app/paramount/id1340650234",
       gradient: "from-blue-600 to-indigo-600",
       bgColor: "bg-gradient-to-br from-blue-50 to-indigo-50",
-    },
-    {
-      icon: netplaygo,
-      title: "NetPlaygoTV",
-      description:
-        "Streaming de canais ao vivo, filmes e séries na palma da sua mão! Tenha acesso a uma programação completa com esportes, notícias, entretenimento e muito mais para curtir em qualquer lugar.",
-      playstore:
-        "https://play.google.com/store/apps/details?id=netplaygo.com.br",
-      appstore: "https://apps.apple.com/br/app/netplay-go/id6450018239",
-      gradient: "from-green-600 to-emerald-600",
-      bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
     },
   ];
 

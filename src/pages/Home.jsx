@@ -1,5 +1,5 @@
 import Cards from "../components/Cards";
-import Contato from "./Contato";
+import Contato from "../components/Contato";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Plans from "../components/Plans";
