@@ -99,13 +99,13 @@ const PlanCard = React.memo(
   ({ plan, index, isVisible, animationDelay, onRef }) => {
     const cardClasses = useMemo(() => {
       const baseClasses =
-        "relative rounded-lg shadow-md p-8 w-80 flex flex-col justify-between items-center max-w-full transition-all duration-700 ease-out hover:-translate-y-3";
+        "relative rounded-lg shadow-md p-8 w-80 flex flex-col justify-between items-center max-w-full transition-transform duration-100 ease-out hover:-translate-y-3";
       const backgroundClasses = plan.best
         ? "bg-blue text-white lg:mt-[-3rem]"
         : "bg-white";
       const animationClasses = isVisible
-        ? "opacity-100 transform translate-y-0"
-        : "opacity-0 transform translate-y-16";
+        ? "animate-fade-in-up opacity-100"
+        : "opacity-0";
 
       return `${baseClasses} ${backgroundClasses} ${animationClasses}`;
     }, [plan.best, isVisible]);
@@ -119,9 +119,11 @@ const PlanCard = React.memo(
         ref={onRef}
         data-index={index}
         className={cardClasses}
-        style={{
-          transitionDelay: isVisible ? animationDelay : "0ms",
-        }}
+        style={
+          isVisible
+            ? { animationDelay } // só vale para a entrada
+            : {}
+        }
         role="article"
         aria-labelledby={`plan-title-${plan.id}`}
       >
@@ -201,6 +203,7 @@ const PlanCard = React.memo(
     );
   }
 );
+
 
 PlanCard.displayName = "PlanCard";
 

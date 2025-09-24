@@ -8,3 +8,35 @@
     --font-recursive: "Recursive", sans-serif;
     --font-poppins: "Poppins", sans-serif;
 }
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInFromRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* classes utilitárias para usar no componente */
+.animate-slide-in-left {
+  animation: slideInFromLeft 400ms cubic-bezier(.22,.98,.46,1) forwards;
+}
+.animate-slide-in-right {
+  animation: slideInFromRight 400ms cubic-bezier(.22,.98,.46,1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 500ms cubic-bezier(.22,.98,.46,1) forwards;
+}
