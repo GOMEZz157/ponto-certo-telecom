@@ -76,13 +76,13 @@ const Cards = () => {
   const getAnimationClass = (index) => {
     const isVisible = visibleCards.includes(index);
     const isEven = index % 2 === 0;
-    
+
     if (!isVisible) {
-      return isEven 
-        ? "opacity-0 transform -translate-x-full" 
+      return isEven
+        ? "opacity-0 transform -translate-x-full"
         : "opacity-0 transform translate-x-full";
     }
-    
+
     return "opacity-100 transform translate-x-0";
   };
 
@@ -100,11 +100,13 @@ const Cards = () => {
             data-index={index}
             className={`
               bg-dark-blue rounded-lg shadow-md p-6 w-[250px]
-              transition-all duration-100 ease-in hover:-translate-y-3
+              transition-all duration-100 ease-in hover:-translate-y-3 hover:transition-transform hover:duration-200 hover:ease-out
               ${getAnimationClass(index)}
             `}
             style={{
-              transitionDelay: visibleCards.includes(index) ? getAnimationDelay(index) : '0ms'
+              transitionDelay: visibleCards.includes(index)
+                ? getAnimationDelay(index)
+                : "0ms",
             }}
           >
             <div className="text-6xl text-yellow mb-8">{card.icon}</div>
@@ -114,7 +116,7 @@ const Cards = () => {
             <p
               className="text-white"
               dangerouslySetInnerHTML={{
-                __html: highlightPONTOCERTO(card.description)
+                __html: highlightPONTOCERTO(card.description),
               }}
             />
           </div>
