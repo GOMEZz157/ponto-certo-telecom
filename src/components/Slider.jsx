@@ -76,7 +76,7 @@ const slides = [
   {
     type: "image",
     image: tv,
-    title: "Entretenimento sem limites",
+    title: "Com os canais e os streamings que você ama",
     description: "Aproveite a melhor conexão para sua TV e dispositivos.",
     buttonText: "Conheça Mais da NetPlaygo",
     link: "beneficios",
