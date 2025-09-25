@@ -31,7 +31,7 @@ const PLANS_DATA = [
       "Streaming em 8K sem travar",
       "Suporte Técnico dedicado 24/7",
     ],
-    logos: [deezer, max, paramount, netplaygo],
+    logos: [max, netplaygo, paramount],
   },
   {
     id: "850mb",
@@ -43,7 +43,7 @@ const PLANS_DATA = [
       "Qualidade Ultra HD em todas as telas",
       "Instalação rápida em até 24h",
     ],
-    logos: [max, paramount, netplaygo],
+    logos: [max, netplaygo, paramount],
     best: true,
   },
   {
@@ -56,7 +56,7 @@ const PLANS_DATA = [
       "Baixa latência para Games Competitivos",
       "Conexão estável para múltiplos dispositivos",
     ],
-    logos: [deezer, paramount, netplaygo],
+    logos: [deezer, netplaygo, paramount],
   },
   {
     id: "600mb",
@@ -92,7 +92,6 @@ const PLANS_DATA = [
     ],
   },
 ];
-
 
 // Componente separado para o card do plano
 const PlanCard = React.memo(
@@ -170,7 +169,7 @@ const PlanCard = React.memo(
         {/* Logos */}
         {plan.logos && plan.logos.length > 0 && (
           <div
-            className={`flex gap-3 mb-6 ${
+            className={`flex gap-3 mb-6 items-center ${
               plan.best ? "bg-white p-4 rounded-xl" : ""
             }`}
             role="img"
@@ -181,7 +180,7 @@ const PlanCard = React.memo(
                 key={`${plan.id}-logo-${logoIndex}`}
                 src={logo}
                 alt={`Aplicativo incluído ${logoIndex + 1}`}
-                className="h-6"
+                className={logo === netplaygo ? "h-12" : "h-6"}
                 loading="lazy"
               />
             ))}
@@ -203,7 +202,6 @@ const PlanCard = React.memo(
     );
   }
 );
-
 
 PlanCard.displayName = "PlanCard";
 
