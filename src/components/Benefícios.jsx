@@ -1,4 +1,4 @@
-import logo from "../assets/logo-horizontal.png";
+import logo from "../assets/logo.webp";
 import max from "../assets/max.png";
 import deezer from "../assets/deezer.png";
 import netplaygo from "../assets/netplaygo.png";

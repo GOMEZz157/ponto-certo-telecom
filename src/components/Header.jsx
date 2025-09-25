@@ -1,4 +1,4 @@
-import logo from "../assets/logo-horizontal.png";
+import logo from "../assets/logo.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleUser,
@@ -64,7 +64,7 @@ function Header() {
       <nav className="flex justify-between items-center px-8 py-4 text-white">
         {/* Logo */}
         <a href="/" className="cursor-pointer">
-          <img src={logo} className="max-h-13" alt="Logo da ponto certo" />
+          <img src={logo} className="h-13" alt="Logo da ponto certo" />
         </a>
 
         {/* Botão Hamburguer (mobile) */}

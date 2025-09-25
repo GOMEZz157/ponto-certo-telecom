@@ -1,4 +1,4 @@
-import logo from "../assets/logo-horizontal.png";
+import logo from "../assets/logo.webp";
 import BlueButton from "./BlueButton";
 import rocket from "../assets/xelp.png";
 
