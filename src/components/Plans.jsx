@@ -196,7 +196,7 @@ const PlanCard = React.memo(
           </div>
         )}
 
-        <a href="/tv" className="mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded" aria-label="Confira os canais">
+        <a href="/tv" className="mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded" aria-label="Confira os canais" target="_blank">
           <BlueButton
             text={`Confira os canais ${plan.tv}`}
             variant={plan.best ? "highlight" : "primary"}
