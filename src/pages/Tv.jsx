@@ -109,8 +109,8 @@ export default function Channels({ playerUrl = "{PLAYER_URL}" }) {
 
       base = base.filter((c) => {
         const channelIndex = PLAN_ORDER.indexOf(c.plan);
-        // inclui se o canal for "soon" ou se for de um plano <= ao selecionado
-        return c.plan === "soon" || channelIndex <= planIndex;
+        // inclui apenas canais até o plano selecionado (exclui "soon")
+        return channelIndex !== -1 && channelIndex <= planIndex;
       });
     } else {
       base = base.slice().sort((a, b) => {
@@ -274,7 +274,7 @@ export default function Channels({ playerUrl = "{PLAYER_URL}" }) {
                     key={c.id}
                     className="rounded-xl border border-[#1f2a3a] overflow-hidden bg-gradient-to-b from-[#0c1426] to-[#0a1220]"
                   >
-                    <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-[#0b1220] to-[#0e1a31]">
+                    <div className="aspect-video flex items-center justify-center bg-white">
                       <img
                         src={c.logo}
                         alt={c.name}

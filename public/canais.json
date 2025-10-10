@@ -612,15 +612,6 @@
     "url": null
   },
   {
-    "id": "71",
-    "name": "Disney",
-    "logo": "./channels/disney.png",
-    "category": "Filmes & Séries",
-    "plan": "plus",
-    "live": false,
-    "url": null
-  },
-  {
     "id": "72",
     "name": "A&E",
     "logo": "./channels/a&e.png",
@@ -669,15 +660,6 @@
     "id": "77",
     "name": "TLC",
     "logo": "./channels/tlc.png",
-    "category": "Filmes & Séries",
-    "plan": "plus",
-    "live": false,
-    "url": null
-  },
-  {
-    "id": "78",
-    "name": "Universal",
-    "logo": "./channels/universal.png",
     "category": "Filmes & Séries",
     "plan": "plus",
     "live": false,
@@ -1205,15 +1187,7 @@
     "live": false,
     "url": null
   },
-  {
-    "id": "137",
-    "name": "Play TV Horse",
-    "logo": "./channels/playhorse.png",
-    "category": "Variedades & Documentários",
-    "plan": "basic",
-    "live": false,
-    "url": null
-  },
+
   {
     "id": "138",
     "name": "TV Adorar",
@@ -1449,15 +1423,6 @@
     "url": null
   },
   {
-    "id": "164",
-    "name": "Chef TV",
-    "logo": "./channels/chef-tv.png",
-    "category": "Variedades & Documentários",
-    "plan": "plus",
-    "live": false,
-    "url": null
-  },
-  {
     "id": "165",
     "name": "Fuel TV",
     "logo": "./channels/fuel-tv.png",
@@ -1497,15 +1462,6 @@
     "id": "169",
     "name": "Trace Brazuca",
     "logo": "./channels/trace-brazuca.png",
-    "category": "Variedades & Documentários",
-    "plan": "plus",
-    "live": false,
-    "url": null
-  },
-  {
-    "id": "170",
-    "name": "Chef TV",
-    "logo": "./channels/chef-tv.png",
     "category": "Variedades & Documentários",
     "plan": "plus",
     "live": false,
@@ -1560,15 +1516,6 @@
     "id": "176",
     "name": "ZooMoo Kids",
     "logo": "./channels/zoomoo-kids.png",
-    "category": "Infantis",
-    "plan": "plus",
-    "live": false,
-    "url": null
-  },
-  {
-    "id": "177",
-    "name": "Canal Gulli",
-    "logo": "./channels/CanalGulli.png",
     "category": "Infantis",
     "plan": "plus",
     "live": false,
@@ -1638,29 +1585,11 @@
     "url": null
   },
   {
-    "id": "185",
-    "name": "Disney XD",
-    "logo": "./channels/disney-xd.png",
-    "category": "Infantis",
-    "plan": "soon",
-    "live": false,
-    "url": null
-  },
-  {
     "id": "186",
     "name": "Urban Kids",
     "logo": "./channels/urban-kids.png",
     "category": "Infantis",
     "plan": "basic",
-    "live": false,
-    "url": null
-  },
-  {
-    "id": "187",
-    "name": "Disney",
-    "logo": "./channels/disney.png",
-    "category": "Infantis",
-    "plan": "plus",
     "live": false,
     "url": null
   },
@@ -1706,15 +1635,6 @@
     "logo": "./channels/parafernalha.png",
     "category": "Canais Extras",
     "plan": "smart",
-    "live": false,
-    "url": null
-  },
-  {
-    "id": "193",
-    "name": "Cult Hits",
-    "logo": "./channels/cult-hits.png",
-    "category": "Canais Extras",
-    "plan": "plus",
     "live": false,
     "url": null
   },
