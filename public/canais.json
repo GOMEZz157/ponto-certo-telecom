@@ -495,15 +495,6 @@
     "url": null
   },
   {
-    "id": "57",
-    "name": "Paramount",
-    "logo": "./channels/paramount.png",
-    "category": "Filmes & Séries",
-    "plan": "plus",
-    "live": false,
-    "url": null
-  },
-  {
     "id": "58",
     "name": "Arte 1",
     "logo": "./channels/arte1.png",
