@@ -25,6 +25,7 @@ const PLANS_DATA = [
     id: "1gb",
     size: "1GB",
     price: 209.99,
+    tv: "econômico",
     benefits: [
       "1000MB de Velocidade",
       "Wi-Fi 6 de última geração",
@@ -37,6 +38,7 @@ const PLANS_DATA = [
     id: "850mb",
     size: "850MB",
     price: 159.99,
+    tv: "econômico",
     benefits: [
       "850MB de Velocidade",
       "Roteador 5G incluso",
@@ -50,6 +52,7 @@ const PLANS_DATA = [
     id: "750mb",
     size: "750MB",
     price: 129.99,
+    tv: "econômico",
     benefits: [
       "750MB de Velocidade",
       "Ideal para Home Office e reuniões online",
@@ -62,34 +65,40 @@ const PLANS_DATA = [
     id: "600mb",
     size: "600MB",
     price: 99.99,
+    tv: "smart",
     benefits: [
       "600MB de Velocidade",
       "Perfeito para assistir séries e filmes",
       "Navegação rápida em sites e redes sociais",
       "Download de arquivos pesados com agilidade",
     ],
+    logos: [netplaygo],
   },
   {
     id: "350mb",
     size: "350MB",
     price: 79.99,
+    tv: "smart",
     benefits: [
       "350MB de Velocidade",
       "Bom para chamadas de vídeo com qualidade",
       "Uso confortável em até 5 dispositivos",
       "Facilidade para estudar online",
     ],
+    logos: [netplaygo],
   },
   {
     id: "90mb",
     size: "90MB",
     price: 59.99,
+    tv: "smart",
     benefits: [
       "90MB de Velocidade",
       "Ideal para escutar músicas",
       "Navegação básica no dia a dia",
       "Uso indicado para até 2 dispositivos",
     ],
+    logos: [netplaygo],
   },
 ];
 
@@ -186,6 +195,13 @@ const PlanCard = React.memo(
             ))}
           </div>
         )}
+
+        <a href="/tv" className="mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded" aria-label="Confira os canais">
+          <BlueButton
+            text={`Confira os canais ${plan.tv}`}
+            variant={plan.best ? "highlight" : "primary"}
+          />
+        </a>
 
         {/* Botão */}
         <a
