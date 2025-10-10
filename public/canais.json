@@ -1324,15 +1324,6 @@
     "url": null
   },
   {
-    "id": "153",
-    "name": "Space Channel",
-    "logo": "./channels/space.png",
-    "category": "Variedades & Documentários",
-    "plan": "plus",
-    "live": false,
-    "url": null
-  },
-  {
     "id": "154",
     "name": "National Geographic",
     "logo": "./channels/national-geographic.png",
