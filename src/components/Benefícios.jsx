@@ -129,31 +129,57 @@ const Benefícios = () => {
                 </p>
 
                 {/* Download Buttons */}
-                <div className="flex gap-4">
+                <div
+                  className="
+    grid grid-cols-2 gap-4 items-center
+    sm:flex sm:flex-row sm:justify-start
+  "
+                >
+                  {/* Google Play */}
                   <a
                     href={beneficio.playstore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn transform hover:scale-105 transition-transform duration-200"
+                    className="group/btn w-full sm:w-48 h-12 flex items-center justify-center rounded-lg transform hover:scale-105 transition-transform duration-200"
                   >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                       alt="Baixar na Google Play Store"
-                      className="h-12 filter drop-shadow-md group-hover/btn:drop-shadow-lg transition-all duration-200"
+                      className="h-full w-auto object-contain"
                     />
                   </a>
+
+                  {/* App Store */}
                   <a
                     href={beneficio.appstore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn transform hover:scale-105 transition-transform duration-200"
+                    className="group/btn w-full sm:w-48 h-12 flex items-center justify-center rounded-lg transform hover:scale-105 transition-transform duration-200"
                   >
                     <img
                       src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                       alt="Baixar na App Store"
-                      className="h-12 filter drop-shadow-md group-hover/btn:drop-shadow-lg transition-all duration-200"
+                      className="h-full w-auto object-contain"
                     />
                   </a>
+
+                  {/* Botão extra só para NetPlaygo */}
+                  {beneficio.title === "NetPlaygoTV" && (
+                    <a
+                      href="/tv"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+        col-span-2 w-full sm:w-48 h-12
+        flex items-center justify-center
+        rounded-lg bg-gradient-to-r from-green-600 to-emerald-600
+        text-white font-semibold shadow-md
+        hover:shadow-lg hover:scale-105 transition-all duration-200
+      "
+                    >
+                      Visualizar Canais
+                    </a>
+                  )}
                 </div>
               </div>
 
