@@ -32,7 +32,7 @@ const PLANS_DATA = [
       "Streaming em 8K sem travar",
       "Suporte Técnico dedicado 24/7",
     ],
-    logos: [max, netplaygo, paramount],
+    logos: [netplaygo],
   },
   {
     id: "850mb",
@@ -45,7 +45,7 @@ const PLANS_DATA = [
       "Qualidade Ultra HD em todas as telas",
       "Instalação rápida em até 24h",
     ],
-    logos: [max, netplaygo, paramount],
+    logos: [netplaygo],
     best: true,
   },
   {
@@ -59,7 +59,7 @@ const PLANS_DATA = [
       "Baixa latência para Games Competitivos",
       "Conexão estável para múltiplos dispositivos",
     ],
-    logos: [deezer, netplaygo, paramount],
+    logos: [netplaygo],
   },
   {
     id: "600mb",
@@ -85,12 +85,11 @@ const PLANS_DATA = [
       "Uso confortável em até 5 dispositivos",
       "Facilidade para estudar online",
     ],
-    logos: [netplaygo],
   },
   {
     id: "90mb",
     size: "90MB",
-    price: 59.99,
+    price: 69.99,
     tv: "smart",
     benefits: [
       "90MB de Velocidade",
@@ -98,7 +97,6 @@ const PLANS_DATA = [
       "Navegação básica no dia a dia",
       "Uso indicado para até 2 dispositivos",
     ],
-    logos: [netplaygo],
   },
 ];
 
@@ -196,7 +194,12 @@ const PlanCard = React.memo(
           </div>
         )}
 
-        <a href="/tv" className="mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded" aria-label="Confira os canais" target="_blank">
+        <a
+          href="/tv"
+          className="mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+          aria-label="Confira os canais"
+          target="_blank"
+        >
           <BlueButton
             text={`Confira os canais ${plan.tv}`}
             variant={plan.best ? "highlight" : "primary"}
@@ -216,7 +219,7 @@ const PlanCard = React.memo(
         </a>
       </div>
     );
-  }
+  },
 );
 
 PlanCard.displayName = "PlanCard";
@@ -246,7 +249,7 @@ const Plans = () => {
     (index) => (el) => {
       planRefs.current[index] = el;
     },
-    []
+    [],
   );
 
   // Effect para configurar o Intersection Observer
@@ -257,7 +260,7 @@ const Plans = () => {
 
     observerRef.current = new IntersectionObserver(
       handleIntersection,
-      INTERSECTION_OBSERVER_OPTIONS
+      INTERSECTION_OBSERVER_OPTIONS,
     );
 
     const currentRefs = planRefs.current.filter(Boolean);
