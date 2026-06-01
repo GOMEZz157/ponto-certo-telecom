@@ -5,69 +5,69 @@ import netplaygo from "../assets/netplaygo.png";
 import paramount from "../assets/paramount.png";
 
 const Benefícios = () => {
-  const beneficios = [
-    {
-      icon: netplaygo,
-      title: "NetPlaygoTV",
-      description:
-        "Streaming de canais ao vivo, filmes e séries na palma da sua mão! Tenha acesso a uma programação completa com esportes, notícias, entretenimento e muito mais para curtir em qualquer lugar.",
-      playstore:
-        "https://play.google.com/store/apps/details?id=netplaygo.com.br",
-      appstore: "https://apps.apple.com/br/app/netplay-go/id6450018239",
-      gradient: "from-green-600 to-emerald-600",
-      bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
-    },
+  // Separamos a Netplaygo dos outros para controlar o layout individualmente
+  const netplaygoData = {
+    icon: netplaygo,
+    title: "NetPlaygoTV",
+    description:
+      "Streaming de canais ao vivo, filmes e séries na palma da sua mão! Tenha acesso a uma programação completa com esportes, notícias, entretenimento e muito mais para curtir em qualquer lugar.",
+    playstore: "https://play.google.com/store/apps/details?id=netplaygo.com.br",
+    appstore: "https://apps.apple.com/br/app/netplay-go/id6450018239",
+    gradient: "from-green-600 to-emerald-600",
+    bgColor: "bg-gradient-to-br from-green-50 to-emerald-50/50 border-green-200",
+  };
+
+  const adicionais = [
     {
       icon: max,
       title: "Max",
       description:
-        "Streaming de filmes, séries e muito mais para o seu entretenimento! Curta lançamentos exclusivos, sucessos do cinema, produções originais, documentários e uma vasta biblioteca de conteúdos para maratonar quando e onde quiser.",
+        "Streaming de filmes, séries e muito mais para o seu entretenimento! Curta lançamentos exclusivos, sucessos do cinema, produções originais e uma vasta biblioteca.",
       playstore:
         "https://play.google.com/store/apps/details/Max_Stream_HBO_TV_Movies?id=com.wbd.stream&hl=pt_BR&pli=1",
       appstore:
         "https://apps.apple.com/br/app/hbo-max-programas-e-filmes/id1666653815",
       gradient: "from-purple-600 to-pink-600",
-      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
+      bgColor: "bg-gradient-to-br from-purple-50/40 to-pink-50/40 border-purple-100",
     },
     {
       icon: deezer,
       title: "Deezer",
       description:
-        "Streaming de áudio para mais música no seu dia a dia! Escute seus artistas, podcasts e playlists favoritos, descubra novos sons, explore conteúdos exclusivos e aproveite milhões de faixas do mundo todo.",
-      playstore:
-        "https://play.google.com/store/apps/details?id=deezer.android.app",
+        "Streaming de áudio para mais música no seu dia a dia! Escute seus artistas, podcasts e playlists favoritos, descubra novos sons e aproveite milhões de faixas.",
+      playstore: "https://play.google.com/store/apps/details?id=deezer.android.app",
       appstore:
         "https://apps.apple.com/br/app/deezer-ouvir-m%C3%BAsica-e-podcast/id292738169",
       gradient: "from-orange-500 to-red-500",
-      bgColor: "bg-gradient-to-br from-orange-50 to-red-50",
+      bgColor: "bg-gradient-to-br from-orange-50/40 to-red-50/40 border-orange-100",
     },
     {
       icon: paramount,
       title: "Paramount+",
       description:
-        "Streaming de séries, filmes e desenhos para toda a família! Assista produções originais, grandes sucessos de Hollywood, clássicos da TV e conteúdos exclusivos que você só encontra na Paramount.",
+        "Streaming de séries, filmes e desenhos para toda a família! Assista produções originais, grandes sucessos de Hollywood e clássicos da TV.",
       playstore: "https://play.google.com/store/apps/details?id=com.cbs.ca",
       appstore: "https://apps.apple.com/br/app/paramount/id1340650234",
       gradient: "from-blue-600 to-indigo-600",
-      bgColor: "bg-gradient-to-br from-blue-50 to-indigo-50",
+      bgColor: "bg-gradient-to-br from-blue-50/40 to-indigo-50/40 border-blue-100",
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-blue-700 mb-4">
             Benefícios
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Descubra um mundo de entretenimento com os melhores serviços de
-            streaming
+            Descubra um mundo de entretenimento com os melhores serviços de streaming
           </p>
         </div>
 
-        {/* Main Card */}
+        {/* Main Card (Header Interno) */}
         <div className="mb-12">
           <div className="relative overflow-hidden rounded-3xl bg-blue-700 p-8 shadow-2xl">
             <div className="absolute inset-0 bg-black/10"></div>
@@ -91,56 +91,123 @@ const Benefícios = () => {
           </div>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {beneficios.map((beneficio, index) => (
+        {/* --- GRID PRINCIPAL --- */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          
+          {/* CARD EM DESTAQUE: NetPlaygoTV (Ocupa a largura total nas 3 colunas) */}
+          <div
+            className={`md:col-span-3 group relative overflow-hidden rounded-3xl ${netplaygoData.bgColor} p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border-2`}
+          >
+            {/* Tag de Destaque / Incluso */}
+            <div className="absolute top-0 right-0 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-xs md:text-sm font-bold px-6 py-2 rounded-bl-2xl shadow-md uppercase tracking-wider">
+              ★ Incluso no seu Plano
+            </div>
+
+            <div className="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              
+              {/* Lado Esquerdo: Info */}
+              <div className="flex-1">
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="relative">
+                    <div className={`absolute inset-0 bg-gradient-to-r ${netplaygoData.gradient} rounded-2xl blur opacity-40 group-hover:opacity-60 transition-opacity duration-300`}></div>
+                    <img
+                      src={netplaygoData.icon}
+                      alt={`Ícone do ${netplaygoData.title}`}
+                      className="relative w-20 h-20 bg-white rounded-2xl p-2 shadow-lg group-hover:scale-105 transition-transform duration-300 object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3 className={`text-3xl font-black bg-gradient-to-r ${netplaygoData.gradient} bg-clip-text text-transparent`}>
+                      {netplaygoData.title}
+                    </h3>
+                    <p className="text-emerald-700 font-semibold text-sm mt-1">Acesso imediato sem custo adicional</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 text-lg leading-relaxed max-w-3xl">
+                  {netplaygoData.description}
+                </p>
+              </div>
+
+              {/* Lado Direito: Botões de Download */}
+              <div className="flex flex-wrap gap-4 items-center justify-start lg:justify-end lg:min-w-[240px]">
+                <a
+                  href={netplaygoData.playstore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/btn h-12 flex items-center justify-center rounded-lg transform hover:scale-105 transition-transform duration-200"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Baixar na Google Play Store"
+                    className="h-full w-auto object-contain"
+                  />
+                </a>
+
+                <a
+                  href={netplaygoData.appstore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/btn h-12 flex items-center justify-center rounded-lg transform hover:scale-105 transition-transform duration-200"
+                >
+                  <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Baixar na App Store"
+                    className="h-full w-auto object-contain"
+                  />
+                </a>
+
+                <a
+                  href="/tv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 h-12 flex items-center justify-center rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
+                >
+                  Visualizar Canais
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          {/* CARDS SECUNDÁRIOS: A La Carte (Ficam menores em grid abaixo) */}
+          {adicionais.map((beneficio, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-3xl ${beneficio.bgColor} p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50`}
+              className={`group relative overflow-hidden rounded-2xl ${beneficio.bgColor} p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border`}
             >
-              {/* Gradient Overlay */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${beneficio.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-              ></div>
+              {/* Tag de Adicional / A la carte */}
+              <div className="absolute top-0 right-0 bg-gray-200 text-gray-600 text-[10px] font-semibold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                Adicional A La Carte
+              </div>
 
               <div className="relative">
                 {/* Icon and Title */}
-                <div className="flex items-center gap-6 mb-6">
+                <div className="flex items-center gap-4 mb-4">
                   <div className="relative">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${beneficio.gradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300`}
-                    ></div>
                     <img
                       src={beneficio.icon}
                       alt={`Ícone do ${beneficio.title}`}
-                      className="relative w-16 h-16 bg-white rounded-2xl p-2 shadow-lg group-hover:scale-110 transition-transform duration-300 object-contain"
+                      className="relative w-12 h-12 bg-white rounded-xl p-1.5 shadow-md object-contain"
                     />
                   </div>
-                  <h3
-                    className={`text-2xl font-bold bg-gradient-to-r ${beneficio.gradient} bg-clip-text text-transparent`}
-                  >
+                  <h3 className={`text-xl font-bold bg-gradient-to-r ${beneficio.gradient} bg-clip-text text-transparent`}>
                     {beneficio.title}
                   </h3>
                 </div>
 
-                {/* Description */}
-                <p className="text-gray-700 text-lg leading-relaxed mb-8 line-clamp-4">
+                {/* Description (Reduzida para manter o card menor e harmônico) */}
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
                   {beneficio.description}
                 </p>
 
-                {/* Download Buttons */}
-                <div
-                  className="
-    grid grid-cols-2 gap-4 items-center
-    sm:flex sm:flex-row sm:justify-start
-  "
-                >
-                  {/* Google Play */}
+                {/* Download Buttons menores */}
+                <div className="flex gap-2 items-center flex-wrap">
                   <a
                     href={beneficio.playstore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn w-full sm:w-48 h-12 flex items-center justify-center rounded-lg transform hover:scale-105 transition-transform duration-200"
+                    className="h-8 flex items-center justify-center rounded transform hover:scale-105 transition-transform duration-200"
                   >
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
@@ -149,12 +216,11 @@ const Benefícios = () => {
                     />
                   </a>
 
-                  {/* App Store */}
                   <a
                     href={beneficio.appstore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn w-full sm:w-48 h-12 flex items-center justify-center rounded-lg transform hover:scale-105 transition-transform duration-200"
+                    className="h-8 flex items-center justify-center rounded transform hover:scale-105 transition-transform duration-200"
                   >
                     <img
                       src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
@@ -162,42 +228,20 @@ const Benefícios = () => {
                       className="h-full w-auto object-contain"
                     />
                   </a>
-
-                  {/* Botão extra só para NetPlaygo */}
-                  {beneficio.title === "NetPlaygoTV" && (
-                    <a
-                      href="/tv"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-        col-span-2 w-full sm:w-48 h-12
-        flex items-center justify-center
-        rounded-lg bg-gradient-to-r from-green-600 to-emerald-600
-        text-white font-semibold shadow-md
-        hover:shadow-lg hover:scale-105 transition-all duration-200
-      "
-                    >
-                      Visualizar Canais
-                    </a>
-                  )}
                 </div>
-              </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute top-4 right-4 w-32 h-32 opacity-5">
-                <div
-                  className={`w-full h-full rounded-full bg-gradient-to-br ${beneficio.gradient}`}
-                ></div>
               </div>
             </div>
           ))}
+
         </div>
+        {/* --- FIM DO GRID --- */}
 
         {/* Call to Action */}
         <a
           href="https://wa.link/gkcjyx"
           target="_blank"
           rel="noopener noreferrer"
+          className="block"
         >
           <div className="text-center mt-16">
             <div className="inline-block p-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 cursor-pointer transform hover:-translate-y-2">
