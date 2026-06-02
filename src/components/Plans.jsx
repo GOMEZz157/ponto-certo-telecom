@@ -78,7 +78,6 @@ const PLANS_DATA = [
     id: "350mb",
     size: "350MB",
     price: 79.99,
-    tv: "smart",
     benefits: [
       "350MB de Velocidade",
       "Bom para chamadas de vídeo com qualidade",
@@ -90,7 +89,6 @@ const PLANS_DATA = [
     id: "90mb",
     size: "90MB",
     price: 69.99,
-    tv: "smart",
     benefits: [
       "90MB de Velocidade",
       "Ideal para escutar músicas",
@@ -194,17 +192,20 @@ const PlanCard = React.memo(
           </div>
         )}
 
-        <a
-          href="/tv"
-          className="mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-          aria-label="Confira os canais"
-          target="_blank"
-        >
-          <BlueButton
-            text={`Confira os canais ${plan.tv}`}
-            variant={plan.best ? "highlight" : "primary"}
-          />
-        </a>
+        {plan.tv && (
+          <a
+            href="/tv"
+            className="mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+            aria-label="Confira os canais"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BlueButton
+              text={`Confira os canais ${plan.tv}`}
+              variant={plan.best ? "highlight" : "primary"}
+            />
+          </a>
+        )}
 
         {/* Botão */}
         <a
